@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int a=10, b=10;
+struct autorun{
+    autorun(){
+        cout<<(a==b ? "Your system match our requirments now,Shaders are compiling: \n"
+        : "Upgrade your gpu:\n");
+    }
+};
+autorun run;
+int main() {
+    
+    cout << "This runs in the main function";
+
+    return 0;
+}

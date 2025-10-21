@@ -1,0 +1,36 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <string>
+using namespace std;
+class boy{
+    private: 
+    int age;
+    string name;
+    public:
+    void male(int index){
+        cout<<"Enter the age of boy: "<<index+1<<endl;
+        cin>>age;
+//we use the ignore b/c cin still contains endl or \n in the memory like like ['1']['8']['\n']
+        cin.ignore();
+       cout<<"Enter the name of the boy: "<<index+1<<endl;
+       getline(cin,name);
+    }
+    void pr(int in){
+        cout<<"Age of boy "<<in<<" is "<<age+1<<endl;
+        cout<<"Name of boy "<<in<<" is "<<name+1<<endl;
+    }
+};
+int main() {
+int n;
+cout<<"Enter the number of boys to add:\n";
+cin>>n;
+boy *b= new boy[n];
+for(int i=0; i<n; i++){
+    b[i].male(i);
+}
+for(int i=0; i<n; i++){
+    b[i].pr(i);
+}
+
+    return 0;
+}

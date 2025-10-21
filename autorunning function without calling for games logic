@@ -1,16 +1,22 @@
 #include <iostream>
+#include <thread>
+#include <chrono>
 using namespace std;
-int a=10, b=10;
-struct autorun{
-    autorun(){
-        cout<<(a==b ? "Your system match our requirments now,Shaders are compiling: \n"
-        : "Upgrade your gpu:\n");
-    }
-};
-autorun run;
-int main() {
-    
-    cout << "This runs in the main function";
 
+int gpuscore = 10 , estimate=10;
+struct AutoRun{
+  AutoRun(){
+      cout<<"Checking system requirments...\n";
+      this_thread::sleep_for(chrono::milliseconds(1000));
+      cout<<(gpuscore<=estimate ? "System meets requires Specs.\n": "System don't meet minimum specs.\n");
+        for(int i=0; i<=100; i+=20){
+            cout<<"Loading: "<<i<<"%\r"<<flush;
+             this_thread::sleep_for(chrono::milliseconds(300));
+        }
+        cout<<"\nSetup completed.\n\n";
+  }  
+};
+AutoRun run;
+int main() {
     return 0;
 }

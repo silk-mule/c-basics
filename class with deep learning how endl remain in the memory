@@ -17,7 +17,7 @@ class boy{
     }
     void pr(int in){
         cout<<"Age of boy "<<in<<" is "<<age+1<<endl;
-        cout<<"Name of boy "<<in<<" is "<<name+1<<endl;
+        cout<<"Name of boy "<<in<<" is "<<name<<endl;
     }
 };
 int main() {
